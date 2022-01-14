@@ -27,7 +27,7 @@ public class CatalogResource {
     WebClient.Builder webClientBuilder;
 
     @RequestMapping("/{userId}")
-    public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
+    public List<CatalogItem> getCatalog(@PathVariable("userId") String userId){
 
         UserRating userRating = restTemplate.getForObject("http://ratings-data-service/ratingsdata/user/" + userId, UserRating.class);
 
